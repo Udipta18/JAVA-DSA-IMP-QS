@@ -7,7 +7,7 @@ class Solution {
             int mid = i + (j - i) / 2;
             if (arr[mid] > arr[j]) {
                 i = mid + 1;
-            } else j--;
+            } else j=mid;
         }
 
         return arr[i];
