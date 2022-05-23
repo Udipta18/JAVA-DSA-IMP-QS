@@ -1,15 +1,17 @@
 class Solution {
+
     public int arrangeCoins(int n) {
-        int row=0;
-        while(n>0){
- 
+      
+        long le=0;
+        long ri=n;
+        while(le<=ri){
             
-            row++;
-            n-=row;
-        
-        
+            long mid=le+(ri-le)/2;
+            if(n>=(mid*(mid+1)/2)) le=mid+1;
+            else
+                ri=mid-1;
         }
         
-        return n==0?row:row-1;
-    }
+        return (int)ri;
+}
 }
